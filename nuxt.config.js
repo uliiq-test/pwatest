@@ -13,6 +13,7 @@ const port =
   argv.port ||
   process.env.PORT ||
   process.env.npm_package_config_nuxt_port ||
+  process.env.LEANCLOUD_APP_PORT ||
   "3000"
 const host =
   argv.hostname ||
