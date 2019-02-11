@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "npm start",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "devDependencies": {
