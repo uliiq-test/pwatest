@@ -1,4 +1,4 @@
-# pwatest
+# wishhub
 
 > Nuxt.js TypeScript project
 

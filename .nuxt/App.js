@@ -1,14 +1,25 @@
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
+import '..\\assets\\vendor\\nucleo\\css\\nucleo.css'
+
+import '..\\assets\\vendor\\font-awesome\\css\\font-awesome.min.css'
+
 import '..\\assets\\css\\main.css'
 
-import _6f6c098b from '..\\layouts\\default.vue'
+import '..\\assets\\css\\slick.css'
 
-const layouts = { "_default": _6f6c098b }
+import '..\\assets\\css\\slick-theme.css'
+
+import _4051b2f8 from '..\\layouts\\_default.vue'
+import _6c337422 from '..\\layouts\\my.vue'
+import _1a3b299f from '..\\layouts\\top.vue'
+import _6f6c098b from './layouts/default.vue'
+
+const layouts = { "__default": _4051b2f8,"_my": _6c337422,"_top": _1a3b299f,"_default": _6f6c098b }
 
 export default {
-  head: {"title":"tt1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"WishHub（ウィッシュハブ）｜アイドル・アーティストの「お願い」をファンの行動で「叶える」","meta":[{"name":"robots","content":"noindex"},{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, shrink-to-fit=no"},{"name":"description","content":"ブロックチェーンにより行動支援を見える化する、まったく新しいサービスです。"},{"name":"author","content":"Contents Works Inc."},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"~\u002Fassets\u002Fimg\u002Fbrand\u002Ffavicon.png"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.fontawesome.com\u002Freleases\u002Fv5.6.3\u002Fcss\u002Fall.css","integrity":"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s\u002F","crossorigin":"anonymous"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=M+PLUS+Rounded+1c"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=M+PLUS+1p"}],"style":[],"script":[]},
 
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
@@ -78,6 +89,8 @@ export default {
     },
 
     setLayout(layout) {
+      if(layout && typeof layout !== 'string') throw new Error('[nuxt] Avoid using non-string value as layout property.')
+
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
